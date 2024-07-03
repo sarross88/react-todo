@@ -1,30 +1,14 @@
-const myTodo = [
-    {
-      id: 1,
-      title: "Read for first assignment.",
-    },
-    {
-      id: 2,
-      title: "Attend a group mentor session.",
-    },
-    {
-      id: 3,
-      title: "Complete assignment.",
-    }
-  ];
+import TodoListItem from "./TodoListItem";
 
-let TodoList = () => {
+const TodoList = (props) => {
+  return (
     <ul>
-    {myTodo.map(function(item){
-      return(
-        <li key={item.id}>
-          <span>
-            <a>{item.title}</a>
-          </span>
-        </li>
-      );
-    })}
-    </ul>
+      {props.list.map( (item) => {
+        return( <TodoListItem item={item}/>);
+})} </ul>
+); 
 }
+
  
+
 export default TodoList;
